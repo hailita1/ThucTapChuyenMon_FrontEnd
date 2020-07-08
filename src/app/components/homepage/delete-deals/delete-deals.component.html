@@ -1,0 +1,79 @@
+<app-menu-bar></app-menu-bar>
+<div class="container clearfix">
+  <h1>XÓA ĐƠN NHÀ ĐANG THUÊ</h1>
+  <div class="row ">
+    <div class="float-left col-12 col-lg-8">
+      <div class="container-body row">
+        <div class="float-left col-12">
+          <div class="borders">
+            <div class="col-12 float-left">
+              <div href="#" class="hot-news-a"><h3 style="color: red">* Tên ngôi nhà: {{dealsList.house.tenNha}} </h3>
+              </div>
+              <div class="price"><span>* Giá: </span><strong>{{dealsList.house.giaTienTheoDem}}$/Đêm</strong></div>
+              <div class="acreage clearfix">
+                <p>
+                  <span style="font-weight: normal">* Địa chỉ: </span> <a href="#">{{dealsList.house.diaChi}}</a>
+                </p>
+              </div>
+              <div>
+                <span>* Mô tả chung: </span>
+                {{dealsList.house.moTaChung}}
+              </div>
+              <div>
+                <span>* Trạng thái:{{dealsList.house.trangThai}} </span>
+              </div>
+              <form>
+                <div class="form-group">
+                  <label><span class="req">* </span> Loại nhà:  {{dealsList.house.categoryHouse.name}}</label>
+                </div>
+                <div class="form-group">
+                  <label><span class="req">* </span> Loại phòng:  {{dealsList.house.categoryRoom.name}} </label>
+                </div>
+                <div class="form-group">
+                  <label><span class="req">* </span> Chủ nhà:  {{dealsList.house.host.hoTen}} </label>
+                  <label><span class="req">* </span> Số điện thoại:  {{dealsList.house.host.sdt}} </label>
+                </div>
+                <span>* Xem hình ảnh</span>
+
+                <div class="w3-content w3-display-container">
+
+                  <img [src]="image.tenAnh" class="mySlides w3-animate-left" style="width:100%"
+                       *ngFor="let image of dealsList.house.picture">
+
+                  <div class="ha4" style="text-align:center">
+                    <span class="dot" *ngFor="let image of dealsList.house.picture"></span>
+                  </div>
+
+                  <button class="w3-button w3-black w3-display-left" onclick="plusSlides(-1)">&#10094;</button>
+                  <button class="w3-button w3-black w3-display-right" onclick="plusSlides(1)">&#10095;</button>
+
+                </div>
+                <br>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="float-left col-12 col-lg-4">
+      <div class="container-body sidebar_submenu">
+        <div class="title">Danh mục cho thuê</div>
+          <div class="form-group">
+            <div>Thông tin deal</div>
+            <div>Ngày đặt thuê: {{dealsList.ngayDen}}</div>
+            <div>Ngày trả phòng: {{dealsList.ngayDi}}</div>
+            <div>Thành tiền: {{dealsList.thanhTien}}</div>
+
+          </div>
+        <button type="button" class="btn grad" routerLink="/customer/{{dealsList.customer.idCustomer}}"
+                (click)="deleteDeal(dealsList)">Huỷ đơn</button>
+          </div>
+      </div>
+    </div>
+
+  </div>
+
+<app-footer></app-footer>

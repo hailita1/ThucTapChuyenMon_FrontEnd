@@ -1,0 +1,25 @@
+<div class="container-body row">
+  <div class="hot-news clearfix">
+    <h4 class="float-left">Các nhà đang trống </h4>
+  </div>
+  <div class="float-left col-12">
+
+    <div class="box col-sm-12 col-md-6" *ngFor="let house of listHouse">
+      <div class="card">
+        <div class="imgBx">
+          <img src="{{house.picture[0].tenAnh}}" alt="images">
+        </div>
+        <div class="details">
+          <h2>{{house.tenNha}}<br><span>{{house.giaTienTheoDem}}$/Đêm</span><br>
+            <button class="detail-butoon" *ngIf="!isShowForm"  routerLink="/login-homepage">Thuê Nhà  </button>
+            <button class="detail-butoon" *ngIf="isShowForm"  routerLink="/views/{{house.idNha}}">Thuê Nhà  </button>
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

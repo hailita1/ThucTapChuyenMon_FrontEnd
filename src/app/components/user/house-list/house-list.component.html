@@ -1,0 +1,66 @@
+<div class="wrapper">
+  <app-side-bar-user></app-side-bar-user>
+
+  <div id="content">
+    <section id="tabs" class="project-tab">
+      <div class="container-fruid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="tab-content" id="nav-tabContent">
+              <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="nav-home-tab ">
+                <h2>Danh sách ngôi nhà cho thuê</h2>
+                <div *ngIf="isShow"
+                     class="alert {{ (isSuccess) ? 'alert-success' : 'alert-danger' }}"
+                     role="alert">
+                  {{message}}
+                </div>
+                <table class="table" cellspacing="0" id="table-product">
+                  <thead>
+                  <tr>
+                    <th>Tên nhà</th>
+                    <th>Trạng thái</th>
+                    <th>Mô tả</th>
+                    <th>Chức năng</th>
+                  </tr>
+                  </thead>
+                  <tbody *ngFor="let house of houseList; index as i; trackBy: trackByFn">
+                  <tr>
+                    <td>
+                      <h4><a routerLink='/user/house-details/{{house.idNha}}' (click)="findId(house.id)"
+                             class="threed-name"> {{house.tenNha}}</a></h4>
+                    </td>
+                    <td>
+                      <h4>{{house.trangThai}}</h4>
+                    </td>
+                    <td>
+                      <h4>{{house.moTaChung}}</h4>
+                    </td>
+
+                    <td>
+                      <button class="btn btn-success btn-xs" routerLink='/user/house-details/{{house.idNha}}'
+                              (click)="findId(house.id)"><i class="fa fa-eye"></i> Chi tiết
+                      </button>
+                      <button class=" btn btn-info btn-xs" routerLink='/user/edit/{{house.idNha}}'
+                              (click)="findId(house.id)"><i class="fa fa-edit"></i> Sửa
+                      </button>
+                      <button class="btn btn-danger btn-xs" (click)="delete(house.idNha)"><i class="fa fa-times"></i> Xóa
+                      </button>
+                      <button class="btn btn-success btn-xs" routerLink='/history/{{house.idNha}}'><i class="fa fa-eye"></i> Lịch sử
+                      </button>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+
+
+
+

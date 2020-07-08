@@ -1,0 +1,71 @@
+a.nav-link.active.waves-effect.waves-light{
+  color: white!important;
+  background: #0277bd!important;
+}
+
+a.nav-link{
+  color: black!important;
+}
+
+.light-blue.darken-3 {
+  background-color: white !important;
+}
+input#exampleCheck1 {
+  margin-left: 150px;
+}
+button.btn.btn-info.waves-effect.waves-light {
+  width: 70%;
+}
+input{
+  color: black!important;
+}
+a.nav-customAS {
+  padding: 0.9em;
+}
+.normail-a {
+  display: contents!important;
+}
+span.span-span {
+  color: red;
+  position: relative;
+  bottom: 8px;
+  left: 3px;
+}
+.sparkle {
+  max-width: 10em;
+  color: #441151;
+  margin: auto auto;
+}
+.sparkle:hover {
+  cursor: pointer;
+}
+
+.u-hover--sparkle {
+  box-sizing: border-box;
+  position: relative;
+  padding: 0.75em;
+}
+.u-hover--sparkle::before, .u-hover--sparkle::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transform-origin: center;
+}
+.u-hover--sparkle::before {
+  border-top: 0.2em solid #055699;
+  border-bottom: 0.2em solid #055699;
+  transform: scale3d(0, 1, 1);
+}
+.u-hover--sparkle::after {
+  border-left: 0.2em solid #055699;
+  border-right: 0.2em solid #055699;
+  transform: scale3d(1, 0, 1);
+}
+.u-hover--sparkle:hover::before, .u-hover--sparkle:hover::after {
+  transform: scale3d(1, 1, 1);
+  transition: transform 900ms;
+}

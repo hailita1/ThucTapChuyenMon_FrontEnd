@@ -1,0 +1,83 @@
+
+<body>
+<div class="wrapper">
+  <app-side-bar-user></app-side-bar-user>
+
+  <div id="content">
+<div class="container-fruid clearfix register">
+  <div class="row ">
+    <div class="col-12 ">
+      <div class="container-body row">
+        <div class="col-md-3 register-left">
+          <img src="https://www.theskyhouse.com/wp-content/uploads/2016/03/skyhouselogo-4.png" style="height: 100px; width: 200px" alt=""/>
+          <h3>Welcome</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, libero.</p>
+          <a routerLink="/user/house/{{listHouse.host.idChuNha}}">Quay về</a><br/>
+        </div>
+
+        <div class="col-md-9 register-right">
+          <div class="border register-form">
+            <div class="col-12 ">
+              <h2>Tên ngôi nhà: {{listHouse.tenNha}} </h2>
+              <div class="row">
+
+                <div class="col-md-6 float-left">
+                  <div class="form-group">
+                    <p><i class="fa fa-dollar"></i> Giá tiền: {{listHouse.giaTienTheoDem}}$/Đêm</p>
+                  </div>
+                  <div class="form-group">
+                    <p><i class="fa fa-map-marker"></i> Địa chỉ: {{listHouse.diaChi}}</p>
+                  </div>
+
+
+                </div>
+
+                <div class="col-md-6 float-left">
+                  <div class="form-group">
+                    <p><i class="fa fa-question-circle"></i> Trạng thái: {{listHouse.trangThai}}</p>
+                  </div>
+                  <div class="form-group">
+                    <p><i class="fa fa-file"></i> Mô tả chung: {{listHouse.moTaChung}}</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 float-left">
+
+                  <div class="form-group">
+                    <p>*  Loại nhà:  <span class="number-kind">{{listHouse.categoryHouse.name}}</span></p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 float-left">
+                  <div class="form-group">
+                    <p>*  Loại phòng:  <span class="number-kind">{{listHouse.categoryRoom.name}}</span> </p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="w3-content w3-display-container">
+                <img [src]="image.tenAnh" class="mySlides w3-animate-left" style="width:100%" *ngFor="let image of listHouse.picture">
+                <div style="text-align:center">
+                  <span class="dot" *ngFor="let image of listHouse.picture"></span>
+                </div>
+
+                <button class="w3-button w3-black w3-display-left" onclick="plusSlides(-1)">&#10094;</button>
+                <button class="w3-button w3-black w3-display-right" onclick="plusSlides(1)">&#10095;</button>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+
+
+
+</body>
+

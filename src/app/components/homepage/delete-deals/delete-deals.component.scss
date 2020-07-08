@@ -1,0 +1,92 @@
+.container.clearfix {
+  margin-top: 100px;
+}
+img.mySlides.w3-animate-left {
+  display: none;
+}
+img.mySlides {
+  height: 450px !important;
+  border-radius: 20px;
+  margin-top: 10px;
+
+}
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+
+.container-body {
+  margin-top: 30px;
+}
+
+
+.container-body .descrition {
+  margin: 0px 0px 5px;
+}
+
+.container-body .borders {
+  border: 1px solid #E13427 !important;
+  margin-top: 10px;
+  background: #fff9f3;
+}
+.borders{
+  margin-right: 1%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #E13427 !important;
+  display: flex;
+}
+.ha4 {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.container-body{
+  margin-top: 30px;
+}
+.sidebar_submenu {
+  background: #f1f1f1;
+  padding: 15px;
+  border-radius: 0;
+  margin-bottom: 20px;
+}
+.sidebar_submenu .title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: block;
+  color: #e73e3f;
+  margin-bottom: 10px;
+}
+.extra {
+  font-weight: 900;
+  font-size: 28px;
+}
+.smail {
+  font-size: 14px!important;
+}
+.price {
+  margin-bottom: 10px;
+}
+button.btn.grad {
+  width: 100%;
+  margin: 0px;
+  background: linear-gradient(90deg,#3e5be7 0,#4082d4 51%,#055699);
+  color: white;
+  font-weight: bold;
+}
+.sidebar_submenu .active{
+  background: #055699;
+  color: white;
+  padding: 5px;
+}

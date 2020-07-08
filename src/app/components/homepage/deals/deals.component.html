@@ -1,0 +1,90 @@
+<app-menu-bar></app-menu-bar>
+
+<div class="container clearfix">
+  <div class="row ">
+    <div class="float-left col-12 col-lg-8">
+      <div class="container-body row">
+        <div class="float-left col-12">
+          <h2>Cho thuê nhà</h2>
+          <div class="borders clearfix">
+            <div class="col-12 float-left">
+              <div href="#" class="hot-news-a"><h3 style="color: red">* Tên ngôi nhà: {{listHouse.tenNha}} </h3></div>
+              <div class="acreage clearfix">
+                <p>
+                  <span style="font-weight: normal">* Địa chỉ: </span> <a href="#">{{listHouse.diaChi}}</a>
+                </p>
+              </div>
+              <div>
+                <span>* Mô tả chung: </span>
+                {{listHouse.moTaChung}}
+              </div>
+              <br>
+              <div>
+                <span>* Trạng thái:{{listHouse.trangThai}} </span>
+              </div>
+              <br>
+              <div class="form-group">
+                <label><span class="req">* </span> Loại nhà:  {{listHouse.categoryHouse.name}}</label>
+              </div>
+              <div class="form-group">
+                <label><span class="req">* </span> Loại phòng:  {{listHouse.categoryRoom.name}} </label>
+              </div>
+              <span>* Xem hình ảnh</span>
+
+              <div class="w3-content w3-display-container">
+
+                <img [src]="image.tenAnh" class="mySlides w3-animate-left" style="width:100%"
+                     *ngFor="let image of listHouse.picture">
+
+                <div class="ha4" style="text-align:center">
+                  <span class="dot" *ngFor="let image of listHouse.picture"></span>
+                </div>
+
+                <a class="w3-button w3-black w3-display-left" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="w3-button w3-black w3-display-right" onclick="plusSlides(1)">&#10095;</a>
+
+              </div>
+
+
+              <!--                <div class="form-group">-->
+              <!--                  <label for="tien">Số tiền phải trả</label>-->
+              <!--                  <input id="tien" formControlName="thanhTien" type="text" class="form-control" value="{{thanhTien}}" [(ngModel)]="thanhTien"/>-->
+              <!--                  <p>{{thanhTien}}</p>-->
+              <!--                </div>-->
+              <div>
+
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="float-left col-12 col-lg-4">
+      <div class="container-body sidebar_submenu">
+        <div class="title">Danh mục cho thuê</div>
+        <form [formGroup]="formGroup" (ngSubmit)="saveDeal()">
+          <div class="form-group">
+            <div class="price"><span class="extra">{{listHouse.giaTienTheoDem}}đ</span><span class="smail">/Đêm</span>
+            </div>
+            <label for="ngayDen">Ngày đặt thuê</label>
+            <input id="ngayDen" formControlName="ngayDen" type="date" class="form-control" value=""/>
+          </div>
+          <div class="form-group">
+            <label for="ngayDi">Ngày trả phòng</label>
+            <input id="ngayDi" formControlName="ngayDi" type="date" class="form-control" value=""/>
+          </div>
+          <button class="btn grad" type="submit" (click)="payDeal()">Đặt thuê</button>
+          <div *ngIf="isShow"
+               class="alert {{ (isSuccess) ? 'alert-success' : 'alert-danger' }}"
+               role="alert">
+            {{message}}
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

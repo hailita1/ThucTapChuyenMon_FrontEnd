@@ -1,0 +1,58 @@
+.border {
+  margin-right: 1%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #E13427 !important;
+  display: flex;
+}
+.wrapper{
+  display: flex;
+  align-items: stretch;
+}
+#content{
+  margin: 0px 40px;
+  height: 100%;
+  width: 80%;
+}
+th, td{
+  width: 50%;
+  overflow: hidden;
+}
+table {
+  table-layout: fixed;
+  width: 100%;
+}
+.project-tab {
+  margin-top: 2%;
+}
+
+.project-tab #tabs h6.section-title{
+  color: #eee;
+}
+
+
+.project-tab thead{
+  background: #f3f3f3;
+  color: #333;
+}
+.project-tab a{
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+.tab-pane h4 {
+  text-transform: capitalize!important;
+  color: #2e353d;
+  font-weight: bold;
+}
+button.btn {
+  margin-right: 0px;
+  font-size: 14px;
+
+}
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #dc3545;
+  font-weight: bold;
+}

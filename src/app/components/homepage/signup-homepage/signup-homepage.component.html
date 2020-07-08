@@ -1,0 +1,70 @@
+<body>
+<div class="container register-form">
+  <form [formGroup]="formGroup" (ngSubmit)="save()">
+    <div class="form">
+      <div class="note">
+        <p>Đăng kí đặt thuê nhà </p>
+      </div>
+
+      <div class="form-content">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <i class="fas fa-user prefix"></i>
+              <label for="ho">Họ</label>
+              <input id="ho"  formControlName="ho" type="text" class="form-control" placeholder="Họ *" value=""/>
+            </div>
+            <div class="form-group">
+              <i class="fas fa-user prefix"></i>
+              <label for="ten">Tên</label>
+              <input id="ten"  formControlName="ten" type="text" class="form-control" placeholder="Tên *" value=""/>
+            </div>
+            <div class="form-group">
+              <i class="fas fa-user prefix"></i>
+              <label for="cmt">Chứng minh thư</label>
+              <input id="cmt"  formControlName="cmnd" type="text" class="form-control" placeholder="Chứng minh thư *" value=""/>
+            </div>
+            <div class="form-group">
+              <i class="fas fa-globe prefix"></i>
+              <label for="address">Địa chỉ</label>
+              <input type="text"  id="address" formControlName="diaChi"  class="form-control" placeholder="Địa chỉ *" value=""/>
+            </div>
+          </div>
+          <div class="col-md-6">
+
+            <div class="form-group">
+              <i class="fas fa-user prefix"></i>
+              <label for="sdt">Số điện thoại</label>
+              <input id="sdt"  formControlName="sdt" type="text" class="form-control" placeholder="Số điện thoại *" value=""/>
+            </div>
+            <div class="form-group">
+              <i class="fas fa-envelope prefix"></i>
+              <label for="exampleInputEmail">Tên đăng nhập</label>
+              <input type="text"  id="exampleInputEmail" formControlName="userName" class="form-control" placeholder="Tên đăng nhập" value=""/>
+            </div>
+            <div class="form-group">
+              <i class="fas fa-lock prefix"></i>
+              <label for="exampleInputPassword">Mật khẩu</label>
+              <input type="password" id="exampleInputPassword" formControlName="password" class="form-control" placeholder="Mật khẩu" value=""/>
+            </div>
+            <div class="form-group">
+              <label></label>
+            <button type="submit" class="btnSubmit">Đăng kí</button>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="isShow"
+             class="alert {{ (isSuccess) ? 'alert-success' : 'alert-danger' }}"
+             role="alert">
+          {{message}}
+        </div>
+        <div style="margin-top: 20px">
+          <a style="color: white;font-weight: bold" routerLink="/">Quay về</a>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+</body>

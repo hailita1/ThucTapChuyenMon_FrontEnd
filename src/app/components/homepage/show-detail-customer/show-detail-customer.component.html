@@ -1,0 +1,62 @@
+<h1 class="text-center">Thông tin cá nhân & Lịch sử thuê nhà</h1>
+<div class="row">
+  <div class="col">
+    <h2></h2>
+    <div class="tabs">
+      <div class="tab">
+        <input type="checkbox" id="chck1">
+        <label class="tab-label" for="chck1"><span class="fas fa-user">Thông tin cá nhân</span></label>
+        <div class="tab-content">
+          <div>
+            <div>
+              Họ: <strong>{{customerList.ho}}</strong>
+            </div>
+            <div>
+              Tên: <strong>{{customerList.ten}}</strong>
+            </div>
+            <div>
+              Chứng minh thư: <strong>{{customerList.cmnd}}</strong>
+            </div>
+            <div>
+              Số điện thoại: <strong>{{customerList.sdt}}</strong>
+            </div>
+            <div>
+              Địa chỉ: <strong>{{customerList.diaChi}}</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab">
+        <input type="checkbox" id="chck2">
+        <label class="tab-label" for="chck2"><span class="fas fa-bars">Nhà đang thuê</span></label>
+        <div class="tab-content row clearfix">
+          <div class="col-12 col-lg-4 float-left" *ngFor="let d of dealsListTrong">
+            <span class="houseName">Tên nhà: {{d.house.tenNha}}</span>
+            <div class="action">
+              <button routerLink="/delete-deals/{{d.idGiaoDich}}" class="btn btn-primary"><span
+                class="fas fa-times mr-1"></span> Hủy
+              </button>
+              <button class="btn btn-danger" routerLink="/checkout-deals/{{d.idGiaoDich}}"><span
+                class="fas fa-user-times mr-1">Trả phòng</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab">
+        <input type="checkbox" id="chck3">
+        <label class="tab-label" for="chck3"><span class="fas fa-warehouse">Nhà đã thuê</span></label>
+        <div class="tab-content row clearfix">
+          <div class="col-12 col-lg-4 float-left" *ngFor="let d of dealsListTraPhong">
+            <span class="houseName">Tên nhà: {{d.house.tenNha}}: </span><span class="check">Đã trả phòng</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="backHome" style="width: 120px;padding: 10px;border: 3px solid #2c3e50;margin: 13px;">
+  <a style="color:#2c3e50;font-weight: bold " routerLink="/home"><b><i class="fas fa-arrow-left">Quay về</i></b></a>
+</div>
+

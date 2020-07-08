@@ -1,0 +1,28 @@
+
+<div class="nav-side-menu">
+  <div class="fixed">
+    <h1 class="brand">Quản lý</h1>
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+
+    <div class="menu-list">
+
+      <ul id="menu-content" class="menu-content collapse out">
+        <a class="router-a" routerLink="/user/{{idHost}}">
+        <li>
+          <i class="fa fa-dashboard fa-lg"></i> Bảng điều khiển
+        </li>
+        </a>
+        <li  class="collapsed">
+          <i class="fa fa-list fa-lg"></i> Sản phẩm  <span class="arrow"></span>
+        </li>
+        <ul class="sub-menu " id="new-1">
+          <li class="active" routerLink="/user/house/{{idHost}}">Danh sách các nhà</li>
+          <li routerLink="/user/add/{{idHost}}">Thêm nhà</li>
+          <li routerLink="/user/house/{{idHost}}">Sửa Nhà</li>
+          <li routerLink="/user/house/{{idHost}}">Xóa Nhà</li>
+        </ul>
+      </ul>
+    </div>
+  </div>
+</div>
+

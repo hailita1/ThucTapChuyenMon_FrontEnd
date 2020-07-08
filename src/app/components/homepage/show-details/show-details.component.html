@@ -1,0 +1,105 @@
+<app-menu-bar></app-menu-bar>
+
+<div class="container clearfix">
+  <div class="row ">
+    <div class="float-left col-12 col-lg-8">
+      <div class="container-body row">
+        <div class="float-left col-12">
+          <div class="border">
+            <div class="col-12 float-left">
+              <div href="#" class="hot-news-a"><h3 style="color: red">* Tên ngôi nhà: {{listHouse.tenNha}} </h3></div>
+              <div class="price"><span>* Giá: </span><strong>{{listHouse.giaTienTheoDem}}VNĐ/Đêm</strong></div>
+              <div class="acreage clearfix">
+                <p>
+                  <span style="font-weight: normal">* Địa chỉ: </span> <a href="#">{{listHouse.diaChi}}</a>
+                </p>
+              </div>
+              <div>
+                <span>* Mô tả chung: </span>
+                {{listHouse.moTaChung}}
+              </div>
+              <br>
+              <div>
+                <span>* Trạng thái:{{listHouse.trangThai}} </span>
+              </div>
+              <br>
+              <form [formGroup]="formGroup">
+                <div class="form-group">
+                  <label><span class="req">* </span> Loại nhà:  {{listHouse.categoryHouse.name}}</label>
+                </div>
+                <div class="form-group">
+                  <label><span class="req">* </span> Loại phòng:  {{listHouse.categoryRoom.name}} </label>
+                </div>
+                <div class="form-group">
+                  <label><span class="req">* </span> Số lượng phòng ngủ:  {{listHouse.soLuongPhongNgu}} </label>
+                </div>
+                <div class="form-group">
+                  <label><span class="req">* </span> Số lượng phòng tắm:  {{listHouse.soLuongPhongTam}} </label>
+                </div>
+                <span>* Xem hình ảnh</span>
+
+                <div class="w3-content w3-display-container">
+
+                  <img [src]="image.tenAnh" class="mySlides w3-animate-left" style="width:100%"
+                       *ngFor="let image of listHouse.picture">
+
+                  <div class="ha4" style="text-align:center">
+                    <span class="dot" *ngFor="let image of listHouse.picture"></span>
+                  </div>
+
+                  <button class="w3-button w3-black w3-display-left" onclick="plusSlides(-1)">&#10094;</button>
+                  <button class="w3-button w3-black w3-display-right" onclick="plusSlides(1)">&#10095;</button>
+
+                </div>
+                <div>
+                  <button class="btn grad" routerLink="/deals">Đặt thuê</button>
+                </div>
+                <br>
+                <h2 class="page-header">Comments</h2>
+
+                <div class="row rows" *ngFor="let d of deaslList">
+                  <div class="col-md-12">
+
+                    <section class="comment-list">
+                      <article class="row ">
+                        <div class="col-md-2 col-sm-2 hidden-xs">
+                          <figure class="thumbnail">
+                            <img class="img-responsive"
+                                 src="http://www.tangoflooring.ca/wp-content/uploads/2015/07/user-avatar-placeholder.png"/>
+                            <figcaption class="text-center">{{d.customer.userName}}</figcaption>
+                          </figure>
+                        </div>
+                        <div class="col-md-10 col-sm-10">
+                          <div class="panel panel-default arrow left">
+                            <div class="panel-body">
+                              <header class="text-left">
+                                <div class="comment-user"><i class="fa fa-user"></i> {{d.customer.userName}}</div>
+                              </header>
+                              <div class="comment-post">
+                                <p>
+                                  {{d.phanHoi}}
+                                </p>
+                              </div>
+                              <p>
+                                {{d.danhGia}} sao
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </article>
+                    </section>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="float-left col-12 col-lg-4">
+      <app-side-bar></app-side-bar>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
+

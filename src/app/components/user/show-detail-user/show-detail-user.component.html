@@ -1,0 +1,141 @@
+<div class="wrapper">
+  <app-side-bar-user></app-side-bar-user>
+
+  <div id="content">
+
+    <div class="row ">
+
+      <div class="col-12 col-lg-6 card-box">
+        <a href="#">
+          <div class="padding-border">
+            <h5>Danh sách quản lý</h5>
+            <div class="col-12 clearfix ">
+              <a routerLink="/show-detail-user/{{id}}">
+                <div class="col-6 float-left">
+                  <i style="width: 100%" class="indigo-text text-lighten-1 large material-icons">store</i>
+                  <p class="col-6-span">Thông tin cá nhân</p>
+                </div>
+              </a>
+              <div class="col-6 float-left">
+                <i style="width: 100%" class="indigo-text text-lighten-1 large material-icons">assignment</i>
+                <p class="col-6-span">Danh sách sản phẩm</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-12 col-lg-6 card-box">
+        <a href="#">
+          <div class="padding-border">
+            <h5>Quản lý danh mục</h5>
+            <div class="col-12 clearfix ">
+              <div class="col-6 float-left">
+                <i style="width: 100%" class="indigo-text text-lighten-1 large material-icons">view_list</i>
+                <p class="col-6-span">Thể loại</p>
+              </div>
+              <div class="col-6 float-left">
+                <i style="width: 100%" class="indigo-text text-lighten-1 large material-icons">view_list</i>
+                <p class="col-6-span">Tiểu mục</p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="container bootstrap snippet">
+      <br>
+      <h1>Thông tin cá nhân</h1>
+      <div class="panel-body inf-content">
+        <div class="row">
+          <div class="col-md-4">
+            <img src="{{urlHaiLit}}" style="width:600px;height: 350px" title=""
+                 class="img-circle img-thumbnail isTooltip" data-original-title="Usuario">
+          </div>
+          <div class="col-md-6">
+            <strong></strong><br><br>
+            <div class="table-responsive">
+              <table class="table table-condensed ">
+                <tr>
+                  <td>
+                    <strong>
+                      <span class="fas fa-user text-primary"></span>
+                      Họ tên
+                    </strong>
+                  </td>
+                  <td class="text-primary">
+                    {{listUser.hoTen}}
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>
+                      <span class="fas fa-globe  text-primary"></span>
+                      Địa chỉ
+                    </strong>
+                  </td>
+                  <td class="text-primary">
+                    {{listUser.diaChi}}
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <strong>
+                      <span class="fas fa-address-card  text-primary"></span>
+                      Tên đăng nhập
+                    </strong>
+                  </td>
+                  <td class="text-primary">
+                    {{listUser.userName}}
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <strong>
+                      <span class="fas fa-lock  text-primary"></span>
+                      Mật khẩu
+                    </strong>
+                  </td>
+                  <td class="text-primary">
+                    {{listUser.password}}
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <strong>
+                      <span class="fas fa-edit  text-primary"></span>
+                      Sửa thông tin
+                    </strong>
+                  </td>
+                  <td class="text-primary">
+                    <button class="btn-primary" routerLink="/edit-user/{{id}}">Sửa thông tin</button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <strong>
+                      <span></span><i class="fas fa-sign-in-alt"></i>
+                      Chức năng
+                    </strong>
+                  </td>
+                  <td class="text-primary">
+                    <button class="btn-danger" routerLink="/">Đăng xuất</button>
+                  </td>
+                </tr>
+
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <
+
+  </div>
+</div>

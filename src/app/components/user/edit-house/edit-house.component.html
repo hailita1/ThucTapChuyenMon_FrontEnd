@@ -1,0 +1,130 @@
+<div class="wrapper">
+  <app-side-bar-user></app-side-bar-user>
+  <div id="content">
+    <div class="container-fruid register">
+      <div class="row">
+
+        <div class="col-md-3 register-left">
+          <img src="https://www.theskyhouse.com/wp-content/uploads/2016/03/skyhouselogo-4.png" style="height: 100px; width: 200px" alt=""/>
+          <h3>Welcome</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, libero.</p>
+          <a routerLink="/user/house/{{house.host.idChuNha}}">Quay về</a><br/>
+        </div>
+
+        <div class="col-md-9 register-right">
+
+          <div class="tab-content" id="myTabContent">
+
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+              <div *ngIf="isShow"
+                   class="alert {{ (isSuccess) ? 'alert-success' : 'alert-danger' }}"
+                   role="alert">
+                {{message}}
+              </div>
+
+              <h3 class="register-heading">Sửa sản phẩm</h3>
+
+              <form [formGroup]="formGroup">
+                <div class="row register-form">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input formControlName="tenNha" placeholder="Tên nhà *" type="text" class="form-control"
+                             id="tenNha" aria-describedby="emailHelp">
+                    </div>
+                    <div class="form-group">
+                      <input placeholder="Địa chỉ *" formControlName="diaChi" type="text" class="form-control"
+                             id="diaChi">
+                    </div>
+                    <div class="form-group">
+                      <input placeholder="Số lượng phòng ngủ " formControlName="soLuongPhongNgu" type="text"
+                             class="form-control" id="soLuongPhongNgu">
+                    </div>
+                    <div class="form-group">
+                      <input placeholder="Số lượng phòng tắm *" formControlName="soLuongPhongTam" type="text"
+                             class="form-control" id="soLuongPhongTam">
+                    </div>
+
+
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input placeholder="Mô tả chung *" formControlName="moTaChung" type="text" class="form-control"
+                             id="moTaChung">
+                    </div>
+                    <div class="form-group">
+                      <input placeholder="Giá tiền theo đêm *" formControlName="giaTienTheoDem" type="text"
+                             class="form-control" id="giaTienTheoDem">
+                    </div>
+                    <div class="form-group">
+                      <select formControlName="trangThai">
+                        <option>Trống</option>
+                        <option>Đã thuê</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <div class="input-group">
+                        <input type="text" class="form-control" readonly>
+                        <div class="input-group-btn">
+                                  <span style="margin: 0px" class="fileUpload btn btn-primary">
+                                      <span (click)="onClick()" class="upl" id="upload">Upload multiple file</span>
+                                      <input type="file" (change)="uploadFile($event)" class="upload up" id="up"
+                                             onchange="readURL(this);" multiple/>
+                                    </span>
+                        </div>
+                        <div *ngIf="isLoading" class=" spinner-border" role="status">
+                          <span class="  sr-only">Loading...</span>
+                        </div>
+                      </div>
+
+
+                    </div>
+                  </div>
+
+
+                  <div class="col-md-12">
+
+                    <div formGroupName="categoryHouse" class="form-group col-6 float-left"
+                         style="padding: 0px!important;">
+                      <label>Loại nhà</label>
+                      <select formControlName="id">
+                        <option *ngFor="let s of categoryHouseList" value="{{s.id}}">{{s.name}}</option>
+                      </select>
+                    </div>
+
+                    <div formGroupName="categoryRoom" class="form-group col-6 float-left" style="padding-right: 0px">
+                      <label>Loại phòng</label>
+                      <select formControlName="id">
+                        <option *ngFor="let s of categoryRoomList" value="{{s.id}}">{{s.name}}</option>
+                      </select>
+
+                    </div>
+
+                  </div>
+                  <div class="col-12">
+                    <div class=" clearfix col-lg-3 col-md-4 col-6 float-left"
+                         *ngFor="let image of picture2, index as i ">
+                      <div class="img-galary">
+                        <p class="d-block mb-4 h-100">
+                          <span (click)="pushDeleteImage(i)" class="close">×</span>
+                          <img class="img-fluid img-thumbnail" [src]="image.tenAnh" alt="">
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <button type="submit" (click)="edit()" class="btnRegister">
+                    Sửa
+                  </button>
+                </div>
+
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+

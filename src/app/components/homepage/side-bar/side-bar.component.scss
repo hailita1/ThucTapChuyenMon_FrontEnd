@@ -1,0 +1,65 @@
+.container-body{
+  margin-top: 30px;
+}
+.sidebar_submenu {
+  background: #f1f1f1;
+  padding: 15px;
+  border-radius: 0;
+  margin-bottom: 20px;
+}
+.sidebar_submenu .title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: block;
+  color: #e73e3f;
+  margin-bottom: 10px;
+}
+.sidebar_submenu ul {
+  padding-left: 20px;
+}
+.sidebar_submenu ul li {
+  padding: 7px 0;
+  border-bottom: 1px dashed #ddd;
+  list-style: none;
+}
+.sidebar_submenu ul li a {
+  color: #000;
+  font-size: 14px;
+  margin-left: 10px;
+}
+.fa-angle-right:before {
+  content: "\f105";
+  color: red;
+}
+.list_post_recent {
+  margin-top: 30px;
+}
+
+.list_post_recent .header {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  display: block;
+  color: #e73e3f;
+}
+.list_post_recent ul li {
+  padding: 0 20px 10px 0;
+  margin-bottom: 10px;
+  border-bottom: 1px dashed #ddd;
+}
+.list_post_recent ul li .price {
+  color: #37a344;
+  font-weight: 700;
+  margin-right: 40px;
+  font-size: 14px;
+}
+.list_post_recent ul li .title {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+  display: block;
+  margin-bottom: 5px;
+}
+.list_post_recent ul {
+  padding-left: 20px;
+}

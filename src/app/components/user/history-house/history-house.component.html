@@ -1,0 +1,46 @@
+<div class="wrapper">
+  <app-side-bar-user></app-side-bar-user>
+  <div id="content">
+    <div class="container-fruid register">
+      <p>Lịch sử</p>
+
+
+      <div class="row rows" *ngFor="let d of dealsList">
+        <div class="col-md-12">
+
+          <section class="comment-list">
+            <article class="row ">
+              <div class="col-md-2 col-sm-2 hidden-xs">
+                <figure class="thumbnail">
+                  <img class="img-responsive"
+                       src="http://www.tangoflooring.ca/wp-content/uploads/2015/07/user-avatar-placeholder.png"/>
+                  <figcaption class="text-center">{{d.customer.ten}}</figcaption>
+                </figure>
+              </div>
+              <div class="col-md-10 col-sm-10">
+                <div class="panel panel-default arrow left">
+                  <div class="panel-body">
+                    <header class="text-left">
+                      <h3 style="color: red">Thông tin khách hàng</h3>
+                      <div class="comment-user"><i class="fa fa-user"></i> {{d.customer.ho}} {{d.customer.ten}}</div>
+                      <div class="comment-user">Địa chỉ : {{d.customer.diaChi}} </div>
+                      <div class="comment-user">Số chứng minh nhân dân : {{d.customer.cmnd}} </div>
+                      <div class="comment-user">Số điện thoại : {{d.customer.sdt}} </div>
+                    </header>
+                    <div class="comment-post">
+                      <h3 style="color: red">Thông tin đặt thuê nhà</h3>
+                    </div>
+                    <div>Ngày đặt thuê: {{d.ngayDen}}</div>
+                    <div>Ngày trả phòng: {{d.ngayDi}}</div>
+                    <div>Thành tiền: {{d.thanhTien}}</div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </section>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
