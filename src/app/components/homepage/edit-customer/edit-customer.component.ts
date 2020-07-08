@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ComponentsService} from '../../components.service';
 import {ActivatedRoute} from '@angular/router';
 import {ICustomer} from '../../../interface/customer';
@@ -24,6 +24,7 @@ export class EditCustomerComponent implements OnInit {
     cmnd: 0,
     diaChi: '',
     sdt: 0,
+    avt: '',
   };
   formGroup = new FormGroup({
     userName: new FormControl(),
@@ -34,12 +35,14 @@ export class EditCustomerComponent implements OnInit {
     diaChi: new FormControl(),
     sdt: new FormControl()
   });
-  constructor(private componentsService: ComponentsService, private route: ActivatedRoute) { }
+
+  constructor(private componentsService: ComponentsService, private route: ActivatedRoute) {
+  }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       const idSearch = params.get('id');
-      this.componentsService.findByIdCustomer(idSearch).subscribe( result => {
+      this.componentsService.findByIdCustomer(idSearch).subscribe(result => {
         this.customer = result;
         this.formGroup.controls.userName.setValue(this.customer.userName);
         this.formGroup.controls.password.setValue(this.customer.password);
@@ -52,6 +55,7 @@ export class EditCustomerComponent implements OnInit {
       });
     });
   }
+
   edit() {
     this.customer.idCustomer = this.idTest;
     this.customer.userName = this.formGroup.get('userName').value;
@@ -61,7 +65,7 @@ export class EditCustomerComponent implements OnInit {
     this.customer.cmnd = this.formGroup.get('cmnd').value;
     this.customer.diaChi = this.formGroup.get('diaChi').value;
     this.customer.sdt = this.formGroup.get('sdt').value;
-    this.componentsService.editCustomer(this.customer).subscribe( result => {
+    this.componentsService.editCustomer(this.customer).subscribe(result => {
       this.isShow = true;
       this.isSuccess = true;
       this.message = 'Sửa thành công!';

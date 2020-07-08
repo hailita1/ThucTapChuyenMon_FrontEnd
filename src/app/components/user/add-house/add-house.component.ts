@@ -107,6 +107,7 @@ export class AddHouseComponent implements OnInit {
     this.house.categoryHouse = this.formGroup.get('categoryHouse').value;
     this.house.categoryRoom = this.formGroup.get('categoryRoom').value;
     this.house.picture = this.arrayPicture;
+    console.log(this.house);
     if (this.isDone === true) {
       this.componentsService.addHouse(this.house).subscribe(result => {
         this.isShow = true;

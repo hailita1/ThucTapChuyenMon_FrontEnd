@@ -7,4 +7,5 @@ export interface ICustomer {
   cmnd?: number;
   diaChi?: string;
   sdt?: number;
+  avt?: string;
 }
