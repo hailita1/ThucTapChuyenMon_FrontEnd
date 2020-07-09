@@ -8,11 +8,10 @@ import {ComponentsService} from '../../components.service';
 })
 export class BodyNewsComponent implements OnInit {
 
-  listHouse: any[];
+  listHouse: any;
   categoryHouseList: any[];
   categoryRoomList: any[];
   isShowForm = false;
-  linkUrl: any;
   constructor(private componentsService: ComponentsService) { }
 
   ngOnInit(): void {
@@ -29,5 +28,4 @@ export class BodyNewsComponent implements OnInit {
     this.isShowForm = Boolean(localStorage.getItem('check'));
     console.log(this.isShowForm);
   }
-
 }

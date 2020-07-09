@@ -9,7 +9,7 @@
             <div class="col-12 float-left">
               <div href="#" class="hot-news-a"><h3 style="color: red">* Tên ngôi nhà: {{dealsList.house.tenNha}} </h3>
               </div>
-              <div class="price"><span>* Giá: </span><strong>{{dealsList.house.giaTienTheoDem}}$/Đêm</strong></div>
+              <div class="price"><span>* Giá: </span><strong>{{dealsList.house.giaTienTheoDem}} VNĐ/Đêm</strong></div>
               <div class="acreage clearfix">
                 <p>
                   <span style="font-weight: normal">* Địa chỉ: </span> <a href="#">{{dealsList.house.diaChi}}</a>
@@ -69,7 +69,7 @@
 
           </div>
         <button type="button" class="btn grad" routerLink="/customer/{{dealsList.customer.idCustomer}}"
-                (click)="deleteDeal(dealsList)">Huỷ đơn</button>
+                (click)="deleteDeal(dealsList)">Huỷ đặt phòng</button>
           </div>
       </div>
     </div>

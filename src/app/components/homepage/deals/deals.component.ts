@@ -23,6 +23,7 @@ export class DealsComponent implements OnInit {
   categoryHouseList: any[];
   categoryRoomList: any[];
   thanhTien: number;
+  currentTime = new Date();
   deals: IDeal = {
     ngayDen: '',
     ngayDi: '',
@@ -77,7 +78,10 @@ export class DealsComponent implements OnInit {
     this.deals.house.idNha = this.id;
     this.deals.customer.idCustomer = Number(this.idCustomer);
     console.log(this.deals);
-    if (this.deals.ngayDen < this.deals.ngayDi) {
+    const dealTime = new Date(this.deals.ngayDen);
+    console.log(dealTime.getTime());
+    console.log(this.currentTime.getTime());
+    if (this.deals.ngayDen < this.deals.ngayDi && dealTime.getTime() - this.currentTime.getTime() >= 0) {
       this.componentsService.addDeals(this.deals).subscribe(result => {
         this.isShow = true;
         this.isSuccess = true;
@@ -95,11 +99,11 @@ export class DealsComponent implements OnInit {
       }, error => {
         this.isShow = true;
         this.isSuccess = false;
-        this.message = 'Thuê thất bại!';
+        alert('Đặt phòng thất bại ');
         this.formGroup.reset();
       });
     } else {
-      alert('Thời gian đến phải nhỏ hơn thời gian đi');
+      alert('Đặt phòng thất bại');
     }
   }
 
